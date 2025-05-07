@@ -1,6 +1,9 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\SiswaController;
+use App\Http\Controllers\WaliMuridController;
+use App\Http\Controllers\KelasController;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,6 +16,15 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [SiswaController::class, 'index'])->name('siswa.index');
+Route::get('/siswa/delete/{id}', [SiswaController::class, 'destroy']);
+Route::get('/siswa/create', [SiswaController::class, 'create']);
+Route::post('/siswa/store', [SiswaController::class, 'store']);
+
+Route::get('/kelas', [KelasController::class, 'kelas'])->name('kelas.index');
+Route::get('/wali_murid', [WaliMuridController::class, 'index'])->name('wali.index');
+
+
+
+
+
