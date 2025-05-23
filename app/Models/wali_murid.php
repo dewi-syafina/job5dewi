@@ -9,4 +9,11 @@ class WaliMurid extends Model
 {
     use HasFactory;
 
+    // Jika nama tabel beda, uncomment baris ini dan sesuaikan:
+    // protected $table = 'wali_murid';
+
+    protected $fillable = [
+        'nama_wali',
+        'kontak',
+    ];
 }
